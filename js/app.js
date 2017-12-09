@@ -9,6 +9,8 @@ happenApp.controller('RingueController', function RingueController($scope) {
 	$scope.tempoInicial;
 	$scope.pausa = 0;
 	$scope.inciado = 0;
+	var round = 1;
+	$scope.round = round; 
 
 	function relogio () {
 		console.log('tic tac');
@@ -88,4 +90,18 @@ happenApp.controller('RingueController', function RingueController($scope) {
 	   setTimeout(function(){soundFile.play();},1);
 	}
 
+	/*
+	 * Placar do round
+	 */
+
+	 $scope.anterior = function () {
+	 	$scope.round = $scope.round==1?1:$scope.round-1;
+	 		 	console.log($scope.round);
+
+	 }
+
+	 $scope.proxima = function () {
+	 	$scope.round = $scope.round==4?4:$scope.round+1;
+	 	console.log($scope.round);
+	 }
 });
