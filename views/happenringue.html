@@ -24,8 +24,11 @@
 			<span ng-bind="tempo"></span>
 		</div>
 		<div>
-			<button ng-click="start()">Começar</button>
-			<button ng-click="end()">Parar</button>
+			<input type="text" ng-model="tempoInicial">{{tempoInicial}}
+			<button ng-if="!iniciado" ng-click="comecar()">Começar</button>
+			<button ng-if="!pausa" ng-click="parar()">Parar</button>
+			<button ng-if="pausa" ng-click="retomar()">Retomar</button>
+			<button ng-click="reiniciar()">Reiniciar</button>
 		</div>
 	</div>
 </body>
