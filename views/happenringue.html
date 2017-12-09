@@ -20,15 +20,20 @@
 			<h1>Happen Ringue</h1>
 		</header>
 
-		<div class="hr-visor">
-			<span ng-bind="tempo"></span>
+		<div class="row">
+			<div class="col-md-2 hr-visor">
+				<span ng-bind="tempo"></span>
+			</div>
 		</div>
-		<div>
-			<input type="text" ng-model="tempoInicial">{{tempoInicial}}
-			<button ng-if="!iniciado" ng-click="comecar()">Começar</button>
-			<button ng-if="!pausa" ng-click="parar()">Parar</button>
-			<button ng-if="pausa" ng-click="retomar()">Retomar</button>
-			<button ng-click="reiniciar()">Reiniciar</button>
+		<div class="row">
+			<div class="col-md-12">
+				<input class="fomr-input" style="border-radius: 10px; width: 40px;" type="text" ng-model="tempoInicial">
+				<button class="btn btn-success" ng-if="!iniciado" ng-click="comecar()">Começar</button>
+				<button class="btn btn-warning" ng-if="!pausa" ng-click="parar()">Parar</button>
+				<button class="btn btn-info" ng-if="pausa" ng-click="retomar()">Retomar</button>
+				<button class="btn btn-danger" ng-click="reiniciar()">Reiniciar</button>
+				<button ng-click="tocar()">Tocar audio</button>
+			</div>
 		</div>
 	</div>
 </body>

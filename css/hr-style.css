@@ -19,10 +19,15 @@ body, html{
 .hr-visor{
 	width: 250px;
 	height: 250px;
+	
+	margin-top: 5%;
 	border-radius: 100%;
 	background-color: white;
 	font-family: 'Orbitron', sans-serif;
 	text-align: center;
 	line-height: 250px;
 	font-size: 50px;
+}
+.row{
+	float: right;
 }

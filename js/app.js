@@ -17,17 +17,20 @@ happenApp.controller('RingueController', function RingueController($scope) {
 			if(segundo < 10){
 				segundo = "0"+segundo;
 			}
+			else if(segundo == 28 && minuto == 0){
+				play();
+			}
 		}
 		else if(segundo == 0){
 			minuto--;
 			if(minuto < 0){
 				segundo = "00";
-				parar();
+				$scope.reiniciar();
 			}else{
 				segundo = 59;
 			}
 		}
-		$scope.tempo = "0"+minuto+":"+segundo;
+		$scope.tempo = minuto+":"+segundo;
 		$scope.$apply();
 		console.log($scope.tempo);
 	}
@@ -52,7 +55,37 @@ happenApp.controller('RingueController', function RingueController($scope) {
 		$scope.pausa = 0;
 		$scope.inciado = 0;
 		$scope.tempo = "00:00";
-		minuto = segundo = 0;
+		minuto = segundo = "00";
 		window.clearInterval(intervalo);
 	}
+
+	$scope.tocar = function () {
+		play();
+	}
+
+	//Create the audio tag
+	var soundFile = document.createElement("audio");
+	soundFile.preload = "auto";
+
+	//Load the sound file (using a source element for expandability)
+	var src = document.createElement("source");
+	src.src = "../images/fimDeRound" + ".mp3";
+	soundFile.appendChild(src);
+
+	//Load the audio tag
+	//It auto plays as a fallback
+	soundFile.load();
+	soundFile.volume = 0.000000;
+	soundFile.play();
+
+	//Plays the sound
+	function play() {
+	   //Set the current time for the audio file to the beginning
+	   soundFile.currentTime = 0.01;
+	   soundFile.volume = 1;
+
+	   //Due to a bug in Firefox, the audio needs to be played after a delay
+	   setTimeout(function(){soundFile.play();},1);
+	}
+
 });
