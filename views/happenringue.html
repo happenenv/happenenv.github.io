@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html leng='pt' ng-app='happenApp'>
 <head>
 	<title>Happen Ringue</title>
 
 	<meta charset="UTF-8">
 
+	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-
+	<!-- CSS files -->
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/hr-style.css">
+	<!-- Javascript files -->
+	<script type="text/javascript" src="../js/angular.min.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
 </head>
 <body>
-	<div class="container-fluid hr-root">
+	<div class="container-fluid hr-root" ng-controller='RingueController'>
 		<header class="hr-header">
-			<h1>Happen Ringue 55</h1>
+			<h1>Happen Ringue</h1>
 		</header>
 
 		<div class="hr-visor">
-			<span>05:00</span>
+			<span ng-bind="tempo"></span>
+		</div>
+		<div>
+			<button ng-click="start()">Começar</button>
+			<button ng-click="end()">Parar</button>
 		</div>
 	</div>
 </body>
