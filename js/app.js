@@ -39,6 +39,7 @@ happenApp.controller('RingueController', function RingueController($scope) {
 
 	$scope.comecar = function () {
 		minuto = $scope.tempoInicial;
+		segundo = 0;
 		$scope.inciado = 1;
 		intervalo = window.setInterval(relogio, 1000);
 	}
@@ -88,6 +89,10 @@ happenApp.controller('RingueController', function RingueController($scope) {
 
 	   //Due to a bug in Firefox, the audio needs to be played after a delay
 	   setTimeout(function(){soundFile.play();},1);
+	}
+
+	$scope.stop = function () {
+		soundFile.volume = 0;
 	}
 
 	/*
