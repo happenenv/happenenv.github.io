@@ -8,7 +8,7 @@ happenApp.controller('RingueController', function RingueController($scope) {
 	$scope.tempo = "00:00";
 	$scope.tempoInicial;
 	$scope.pausa = 0;
-	$scope.inciado = 0;
+	$scope.iniciado = 0;
 	var round = 1;
 	$scope.round = round; 
 
@@ -40,7 +40,7 @@ happenApp.controller('RingueController', function RingueController($scope) {
 	$scope.comecar = function () {
 		minuto = $scope.tempoInicial;
 		segundo = 0;
-		$scope.inciado = 1;
+		$scope.iniciado = 1;
 		intervalo = window.setInterval(relogio, 1000);
 	}
 
@@ -56,7 +56,7 @@ happenApp.controller('RingueController', function RingueController($scope) {
 
 	$scope.reiniciar = function () {
 		$scope.pausa = 0;
-		$scope.inciado = 0;
+		$scope.iniciado = 0;
 		$scope.tempo = "00:00";
 		minuto = segundo = "00";
 		window.clearInterval(intervalo);
