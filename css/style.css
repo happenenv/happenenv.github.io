@@ -139,8 +139,6 @@ footer {
   background-size: cover !important;
 }
 
-
-
 /*---------------------------------------
     Preloader section              
 -----------------------------------------*/
@@ -549,6 +547,7 @@ footer {
 -----------------------------------------*/
 #sponsors img {
   margin-top: 18px;
+  border-radius: 50%;
 }
 
 
